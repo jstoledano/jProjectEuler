@@ -1,6 +1,10 @@
 package oneHundred;
 
+import commons.Math;
+
 public class OneToTen {
+	
+	// commons.Math math = new commons.Math();
 	
 	public long problem001(int limit) {
 		long  sum = 0;
@@ -43,6 +47,47 @@ public class OneToTen {
 			a = b; b = h;
 		}
 		return sum;
+	}
+	
+	public long problem003(long number) {
+		/*
+		 * Largest Prime Factor
+		 * Problem 003
+		 * 
+		 * The prime factors of 13_195 are 5, 7, 13 and 29.
+		 * What is the largest prime factor of the number 600_851_475_143?
+		 * 
+		 */
+		long largestFactor = 2L;
+		
+		if (Math.IsPrime(number)) {
+			return number;
+		}
+		
+		for (long divisor = 3; divisor * divisor <= number; divisor += 2) {
+			if (number % divisor == 0) {
+				largestFactor = divisor;
+				number /= divisor;
+			}
+		}
+		
+		if (number > largestFactor)
+			largestFactor = number;
+		
+		return largestFactor;
+	}
+	
+	public int problem003 (int number) {
+		int largestFactor = 2;
+		if (Math.IsPrime(number)) return number;
+		for (int divisor=3; divisor*divisor<=number; divisor+=2) {
+			if (number%divisor==0) {
+				largestFactor = divisor; 
+				number /= divisor;
+			}
+		}
+		if (number > largestFactor) largestFactor = number;
+		return largestFactor;
 	}
 
 }

@@ -12,6 +12,7 @@ public class Main {
 		
 		System.out.println("Problema 001: " + one);
 		System.out.println("Problema 002: " + dos);
+		System.out.println("Problema 003: " + firstTen.problem003(600_851_475_143L));
 	}
 
 }
