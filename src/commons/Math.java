@@ -30,6 +30,14 @@ public class Math {
             if (number % i == 0) return false;
         }
         return true;
-    }	
+    }
+    
+    public static int log10(int base) {
+    	int resultado = 1;
+    	for (int i = 0; i < base; i++) {
+    		resultado *= 10;
+    	}
+    	return resultado;
+    }
 
 }

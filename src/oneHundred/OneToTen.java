@@ -1,12 +1,13 @@
 package oneHundred;
 
 import commons.Math;
+import commons.Text;
 
 public class OneToTen {
 	
 	// commons.Math math = new commons.Math();
 	
-	public long problem001(int limit) {
+	public static long problem001(int limit) {
 		long  sum = 0;
 		
 		for (int i = 0; i < limit; i++) {
@@ -18,7 +19,7 @@ public class OneToTen {
 		return sum;
 	}
 	
-	public int problem002(int limit) {
+	public static int problem002(int limit) {
 		/*
 		 * Even Fibonacci Numbers
 		 * Problem 002
@@ -49,7 +50,7 @@ public class OneToTen {
 		return sum;
 	}
 	
-	public long problem003(long number) {
+	public static long problem003(long number) {
 		/*
 		 * Largest Prime Factor
 		 * Problem 003
@@ -77,7 +78,7 @@ public class OneToTen {
 		return largestFactor;
 	}
 	
-	public int problem003 (int number) {
+	public static int problem003 (int number) {
 		int largestFactor = 2;
 		if (Math.IsPrime(number)) return number;
 		for (int divisor=3; divisor*divisor<=number; divisor+=2) {
@@ -88,6 +89,36 @@ public class OneToTen {
 		}
 		if (number > largestFactor) largestFactor = number;
 		return largestFactor;
+	}
+	
+	
+	/*
+	 * Largest Palindrome Product
+	 * Problem 4
+	 * 
+	 * A palindromic number reads the same both ways. 
+	 * The largest palindrome made from the product of two
+	 * 2-digit numbers is 9009 = 91 x 99.
+	 * 
+	 * Find the largest palindrome made from the product of 
+	 * two 3-digit numbers.
+	 * 
+	 */
+	public static int problem004(int base) {
+		int palindrome = 0;
+		int min = Math.log10(base - 1);
+		int max = Math.log10(base);
+		
+		
+		for (int i = min; i < max; i++) {
+			for (int j = min; j < max; j++ ) {
+				int res = i * j;
+				int rev = Integer.parseInt(Text.reverseNumber(res));
+				
+				if (res == rev && res > palindrome) palindrome = res;	
+			}
+		}
+		return palindrome;
 	}
 
 }

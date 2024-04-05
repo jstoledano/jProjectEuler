@@ -5,14 +5,9 @@ import oneHundred.OneToTen;
 public class Main {
 
 	public static void main(String[] args) {
-		OneToTen firstTen = new OneToTen();
-		
-		long one = firstTen.problem001(1_000);
-		int dos = firstTen.problem002(4_000_000);
-		
-		System.out.println("Problema 001: " + one);
-		System.out.println("Problema 002: " + dos);
-		System.out.println("Problema 003: " + firstTen.problem003(600_851_475_143L));
+		System.out.println("Problema 001: " + OneToTen.problem001(1_000));
+		System.out.println("Problema 002: " + OneToTen.problem002(4_000_000));
+		System.out.println("Problema 003: " + OneToTen.problem003(600_851_475_143L));
 	}
 
 }
