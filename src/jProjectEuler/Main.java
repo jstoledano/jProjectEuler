@@ -8,6 +8,7 @@ public class Main {
 		System.out.println("Problema 001: " + OneToTen.problem001(1_000));
 		System.out.println("Problema 002: " + OneToTen.problem002(4_000_000));
 		System.out.println("Problema 003: " + OneToTen.problem003(600_851_475_143L));
+		System.out.println("Problema 004: " + OneToTen.problem004(3));
 	}
 
 }
