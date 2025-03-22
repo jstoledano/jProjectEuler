@@ -1,13 +1,13 @@
-package oneHundred;
+package jProjectEulerLib;
 
 import commons.Math;
 import commons.Text;
 
-public class OneToTen {
+public class Level001 {
 	
 	// commons.Math math = new commons.Math();
 	
-	public static long problem001(int limit) {
+	public long problem001(int limit) {
 		long  sum = 0;
 		
 		for (int i = 0; i < limit; i++) {
@@ -19,7 +19,7 @@ public class OneToTen {
 		return sum;
 	}
 	
-	public static int problem002(int limit) {
+	public int problem002(int limit) {
 		/*
 		 * Even Fibonacci Numbers
 		 * Problem 002
@@ -50,7 +50,7 @@ public class OneToTen {
 		return sum;
 	}
 	
-	public static long problem003(long number) {
+	public long problem003(long number) {
 		/*
 		 * Largest Prime Factor
 		 * Problem 003
@@ -78,7 +78,7 @@ public class OneToTen {
 		return largestFactor;
 	}
 	
-	public static int problem003 (int number) {
+	public int problem003 (int number) {
 		int largestFactor = 2;
 		if (Math.IsPrime(number)) return number;
 		for (int divisor=3; divisor*divisor<=number; divisor+=2) {
@@ -104,7 +104,7 @@ public class OneToTen {
 	 * two 3-digit numbers.
 	 * 
 	 */
-	public static int problem004(int base) {
+	public int problem004(int base) {
 		int palindrome = 0;
 		int min = Math.log10(base - 1);
 		int max = Math.log10(base);
@@ -119,6 +119,30 @@ public class OneToTen {
 			}
 		}
 		return palindrome;
+	}
+
+	public long problem005(int max) {
+		/* Smallest Multiple
+		 *
+		 * 2520  is the smallest number that can be divided by each of
+		 * the numbers from 1 to 10 without any remainder.
+		 * What is the smallest positive number that is evenly divisible
+		 * by all of the numbers from 1 to 20?
+		 */
+		long small = 1;
+
+		for (long k = 1; k < max; k++) {
+			if (small % k > 0) {
+				for (long j = 1; j < max; j++) {
+					if ((small * j) % k == 0) {
+						small *= j;
+						break;
+					}
+				}
+			}
+		}
+
+		return small;
 	}
 
 }
