@@ -85,4 +85,14 @@ class Level001Test {
 		long actual = level001.problem005(max);
 		assertEquals(expected, actual);
 	}
+
+	@ParameterizedTest
+	@CsvSource({
+			"10, 2_640",
+			"100, 25_164_150"
+	})
+	void testProblem006(int size, long expected) {
+		long actual = level001.problem006(size);
+		assertEquals(expected, actual);
+	}
 }
