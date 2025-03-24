@@ -95,4 +95,25 @@ class Level001Test {
 		long actual = level001.problem006(size);
 		assertEquals(expected, actual);
 	}
+
+	@ParameterizedTest
+	@CsvSource({
+			"6, 13",
+			"7, 17",
+			"10_001, 104_743"
+	})
+	void testProblem007(int index, long expected) {
+		long actual = level001.problem007(index);
+		assertEquals(expected, actual);
+	}
+
+	@ParameterizedTest
+	@CsvSource({
+			"4, 5832",
+			"13, 23_514_624_000"
+	})
+	void testProblem008(int index, long expected) {
+		long actual = level001.problem008(index);
+		assertEquals(expected, actual);
+	}
 }
